@@ -1,4 +1,3 @@
-// Package main implements a server for Greeter service.
 package main
 
 import (
