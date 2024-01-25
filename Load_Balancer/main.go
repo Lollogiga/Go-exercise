@@ -18,10 +18,6 @@ type server struct {
 	pb.UnimplementedTimeServer
 }
 
-var (
-	addr = flag.String("addr", "localhost:50052", "the address to connect to")
-)
-
 var ip []string
 var port []string
 var count int
@@ -38,6 +34,7 @@ func (s *server) GetTime(ctx context.Context, in *pb.TimeRequest) (*pb.TimeReply
 
 	//Chiudo connessione
 	defer conn.Close()
+
 	// Creo client gRPC associato alla connessione, in grado di invocare operazioni definite nel protobuf del servizio Time.
 	c := pb.NewTimeClient(conn)
 
@@ -65,17 +62,17 @@ func main() {
 	pb.RegisterTimeServer(s, &server{})
 	log.Printf("Load Balancer listening at %v", lis.Addr())
 
+	//Andiamo a recuperare i vari Ip e # di porta dei nostri server
 	//Scan del file di configurazione:
 	f, err := os.Open("configuration.txt")
 	if err != nil {
 		log.Fatalf("Error", err)
 	}
+
 	//Chiusura file
 	defer f.Close()
 
-	//Lettura file:
-	//Creo slice per leggere il file:
-
+	//Lettura File
 	scanner := bufio.NewScanner(f)
 	scanner.Split(bufio.ScanWords)
 
