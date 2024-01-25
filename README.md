@@ -8,19 +8,6 @@ Un client invoca un servizio di richiesta dell'ora presso un server. Ci sono n r
 
 Il Load Balancer utilizza un file di configurazione (`configuration.txt`) per ottenere informazioni sugli indirizzi IP e i numeri di porta di ciascun server. Il client conosce solo la porta del Load Balancer.
 
-## Struttura del Progetto
-
-Progetto-Go/
-|-- Go-exercise/
-| |-- Client/
-| | |-- main.go
-| |-- Load_Balancer/
-| | |-- main.go
-| | |-- configuration.txt
-| |-- Server/
-| | |-- main.go
-
-
 ## Come Eseguire
 
 Nella cartella di lavoro (`Progetto-Go/Go-exercise`), segui i seguenti passaggi:
