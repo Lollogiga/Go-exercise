@@ -1,0 +1,25 @@
+
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/Go-Exercise/Protobuf";
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.Go-Exercise";
+option java_outer_classname = "Protobuf";
+
+package Protobuf;
+
+// The Time service definition.
+service Time {
+  // Sends a time request
+  rpc GetTime (TimeRequest) returns (TimeReply) {}
+}
+
+// The request message containing string TIME
+message TimeRequest {
+  string message = 1;
+}
+
+// The response message containing the server' time
+message TimeReply {
+  string message = 1;
+}
