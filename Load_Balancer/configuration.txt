@@ -1,0 +1,9 @@
+Server1:
+    Ip: 127.0.0.1
+    Port: 50052
+Server2:
+    Ip: 127.0.0.1
+    Port: 50053
+Server3:
+    Ip: 127.0.0.1
+    Port: 50054
